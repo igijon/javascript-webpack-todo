@@ -23,8 +23,9 @@ export class TodoList { //Uso upper camel case porque son clases
     }
 
     eliminarCompletados() {
-
+        //Devuelve los que no están completados
+        this.todo = this.todo.filter(todo => !todo.completado);
+        
     }
-
     
 }
