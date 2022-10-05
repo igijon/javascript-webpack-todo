@@ -7,8 +7,5 @@ import { crearTodoHtml } from './js/componentes';
 
 export const todoList = new TodoList();
 
-const tarea = new Todo('Aprender JavaScrip!!');
-
-todoList.nuevoTodo( tarea );
-
-crearTodoHtml(tarea);
+// todoList.todo.forEach(element => crearTodoHtml(element));
+todoList.todo.forEach(crearTodoHtml); //Es lo mismo que la línea de arriba
