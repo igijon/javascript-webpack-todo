@@ -1,3 +1,5 @@
+import { Todo } from "./todo.class";
+
 export class TodoList { //Uso upper camel case porque son clases
     
     constructor() {
@@ -40,6 +42,11 @@ export class TodoList { //Uso upper camel case porque son clases
         this.todo = (localStorage.getItem('todo')) 
                         ? JSON.parse(localStorage.getItem('todo'))
                         :[];
+
+        //map permite recorrer todos los elementos de un array y devolverlos
+        //mutados con algún cambio, en este caso devuelve una instancia de Todo
+        // this.todo = this.todo.map( obj => Todo.fromJSON( obj ));
+        this.todo = this.todo.map( Todo.fromJSON );
     }
     
 }
