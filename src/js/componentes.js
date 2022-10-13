@@ -10,7 +10,7 @@ const anchorFiltros = document.querySelectorAll('.filtro');
 
 export const crearTodoHtml = (todo) => {
     const htmlTodo = `
-        <li class="${(todo.completado)?'completed':''}" data-id="abc">
+        <li class="${(todo.completado)?'completed':''}" data-id="${todo.id}">
         <div class="view">
             <input class="toggle" type="checkbox" ${(todo.completado)?'checked':''}>
             <label>${ todo.tarea }</label>
@@ -87,7 +87,7 @@ ulFiltros.addEventListener('click', (event) => {
     for( const elemento of divTodoList.children ) {
         
         elemento.classList.remove('hidden');
-        const completado = elemento.classList.contains('completado');
+        const completado = elemento.classList.contains('completed');
         switch(filtro) {
             case 'Pendientes': 
                 if( completado ) {
